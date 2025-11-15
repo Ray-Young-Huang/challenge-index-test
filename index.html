@@ -45,36 +45,59 @@
 
     <h2>What is This Challenge?</h2>
     <p class="bodyText">
-            Ischemic stroke is a highly disabling, recurrent, and economically burdensome disease, with approximately 10
-        million new cases worldwide each year. Carotid atherosclerotic plaque progression and rupture, leading to
-        cerebral hypoperfusion and vascular occlusion, are major causes of ischemic stroke. Ultrasound due to its real-
-        time imaging capability and absence of radiation has become the primary modality for carotid plaque
-        assessment.  Through accurate carotid plaque characterization, we aim to improve the efficiency of clinical decision-making related to stroke
-        diseases, reduce the workload of medical personnel, and provide affordable diagnostic support for resource-
-        limited areas, thereby promoting healthcare equity.
-    
-    </p>
-    <h2>Challenges</h2>
-    <p class="bodyText">
-            To advance automated evaluation of carotid plaques via ultrasound, it is crucial to develop highly
-        robust methods for two core tasks: 
+        Stroke remains a major global health burden, ranking as the second leading cause of death and the leading cause of long-term disability. 
+        Ischemic stroke accounts for nearly 71% of all cases, with cervical artery atherosclerosis serving as a key etiological factor. 
+        Owing to its real-time, low-cost, and widely accessible nature, carotid ultrasound plays a crucial role in evaluating plaque morphology 
+        and identifying high-risk lesions at an early stage.
     </p>
     <p class="bodyText">
-        (1) segmentation of plaques and vascular structures to quantify the degree of lumen stenosis
+        Carotid plaques contribute to stroke through two principal mechanisms: 
+        (1) progressive plaque growth leading to luminal stenosis, and 
+        (2) plaque rupture resulting in thromboembolism. 
+        As such, accurate assessment of plaque morphology and vulnerability is critical for stroke prevention and clinical management. 
+        However, evaluation of plaque vulnerability is highly operator-dependent and particularly challenging for less experienced clinicians. 
+        With the increasing demand for carotid ultrasound screening, automated methods for plaque segmentation and vulnerability classification 
+        have become essential to support efficient and equitable clinical care.
     </p>
+    <h2>Aims of This Challenge</h2>
     <p class="bodyText">
-        (2) classification of plaque vulnerability to assess the risk of rupture.
+        The challenge aims to advance intelligent algorithms for comprehensive carotid plaque assessment. 
+        Participants are expected to develop methods capable of:
+    </p>
+    <ul class="bodyText">
+        <li>Segmenting plaque and vascular structures to automatically quantify luminal stenosis.</li>
+        <li>Classifying plaque vulnerability to estimate rupture risk.</li>
+    </ul>
+    <p class="bodyText">
+        These automated solutions are anticipated to enhance clinical decision-making, reduce clinician workload, 
+        and provide scalable diagnostic support for resource-limited regions.
     </p>
 
-    <h2>Dataset</h2>
+    <h2>Dataset of This Challenge</h2>
     <p class="bodyText">
-            We provided 1500 pairs of Longitudinal/Transverse view image data, with 1000 pairs as the image training set, 
-        200 pairs as the image validation set, and 300 pairs as the image testing set. The segmentation task is set as semi supervised segmentation, 
-        with 10% or 20% segmentation annotation given to 1000 pairs of images, and the rest only given to Longitudinal and Transverse view ultrasound images; 
-        The classification task is divided into two categories according to the RADS guidelines for plaques: low-risk plaques (RADS2) and medium high risk plaques (RADS3-4).
+        Our dataset comprises a large-scale carotid ultrasound dataset with <strong>1,500 paired cases</strong>, 
+        each containing longitudinal and transverse B-mode images. The dataset was collected from a <strong>prospective study</strong> 
+        involving 7 hospitals and 4 major ultrasound machine vendors, all following standardized 
+        acquisition protocols to ensure high diversity and robust generalization across clinical settings. 
+    </p>
+
+    <p class="bodyText">
+        Among all cases: 
+    </p>
+    <ul class="bodyText">
+        <li><strong>1,000 pairs</strong> are provided for training</li>
+        <li><strong>200 pairs</strong> for validation</li>
+        <li><strong>300 hidden pairs</strong> are reserved for testing</li>
+    </ul>
+
+    <p class="bodyText">
+        Each case includes two view-level segmentation masks and one instance-level classification label 
+        (low-risk or high-risk). We provide <strong>all training images and annotations for 10% of cases</strong> for model development in this semi-supervised task.
+        To our knowledge, this is the first and largest paired carotid plaque ultrasound dataset</strong>, 
+        enabling benchmarking of both segmentation and classification methods under real-world clinical variability.
     </p>
     
-    <img src="assets/Dataset.jpg" alt="Dataset"  class="centered-image">
+    <img src="assets/Dataset.png" alt="Dataset"  class="centered-image">
         
     <!--
     <table class="sponsors">
